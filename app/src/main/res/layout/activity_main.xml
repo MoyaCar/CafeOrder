@@ -20,15 +20,31 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="0"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Price"
+        android:textAllCaps="true"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/precio_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8sp"
+        android:text="0"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
+        android:onClick="ingresarOrden"
         android:text="order"
-        android:textAllCaps="true"
-        android:onClick="ingresarOrden"/>
+        android:textAllCaps="true" />
 
 </LinearLayout>
