@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:text="order"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+        android:onClick="ingresarOrden"/>
 
 </LinearLayout>
