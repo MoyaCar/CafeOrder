@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+int CantidadDeCafe = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresarOrden(View view) {
-        mostrar(1);
-        displayPrice(1 * 5);
+
+        displayPrice(CantidadDeCafe * 5);
     }
 
     private void mostrar(int numero) {
@@ -32,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.precio_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+    //Metodo para sumar cantidad de café
+    public void sumar (View view){
+        CantidadDeCafe = CantidadDeCafe + 1;
+        mostrar(CantidadDeCafe);
+
+    }
+    //Metodo para restar la cantidad de cafe
+    public void restar (View view){
+        CantidadDeCafe = CantidadDeCafe - 1;
+        mostrar(CantidadDeCafe);
+
     }
 
 }
