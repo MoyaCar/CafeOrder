@@ -14,6 +14,14 @@
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray" />
 
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:text="+"
+        android:onClick="sumar"
+        />
+
     <TextView
         android:id="@+id/cantidad_text_view"
         android:layout_width="wrap_content"
@@ -21,6 +29,14 @@
         android:padding="8dp"
         android:text="0"
         android:textSize="16sp" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:text="-"
+        android:onClick="restar"
+        />
 
     <TextView
         android:layout_width="wrap_content"
