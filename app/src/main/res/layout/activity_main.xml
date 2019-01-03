@@ -14,29 +14,35 @@
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray" />
 
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:text="+"
-        android:onClick="sumar"
-        />
-
-    <TextView
-        android:id="@+id/cantidad_text_view"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="1"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:text="-"
-        android:onClick="restar"
-        />
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:onClick="restar"
+            android:text="-" />
+
+
+        <TextView
+
+            android:id="@+id/cantidad_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="1"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:onClick="sumar"
+            android:text="+" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
