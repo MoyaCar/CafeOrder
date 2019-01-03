@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresarOrden(View view) {
-        int precio = CantidadDeCafe * 5;
+        String precio = "Precio total: $" + (CantidadDeCafe * 5) + "\n" + "Muchas Gracias!" ;
+
         displayPrice(precio);
     }
 
@@ -31,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void displayPrice(int number) {
+    private void displayPrice(String string) {
         TextView priceTextView = (TextView) findViewById(R.id.precio_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        priceTextView.setText(string);
     }
 
     //Metodo para sumar cantidad de café
@@ -53,5 +54,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
 }

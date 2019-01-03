@@ -21,7 +21,7 @@
         <Button
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="8dp"
+    style=""
             android:onClick="restar"
             android:text="-" />
 
@@ -38,7 +38,7 @@
         <Button
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_margin="8dp"
+
             android:onClick="sumar"
             android:text="+" />
 
