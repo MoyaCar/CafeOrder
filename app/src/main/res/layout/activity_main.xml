@@ -48,12 +48,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Price"
+        android:text="Orden"
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/precio_view"
+        android:id="@+id/orden_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8sp"
