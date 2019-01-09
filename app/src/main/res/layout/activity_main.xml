@@ -108,9 +108,18 @@
         android:id="@+id/order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8sp"
+        android:layout_margin="8dp"
         android:onClick="ingresarOrden"
         android:text="order"
         android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/email_button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="mandar mail"
+        android:onClick="mandarCorreoButton"
+        />
 
 </LinearLayout>
