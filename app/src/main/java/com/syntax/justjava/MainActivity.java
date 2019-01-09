@@ -13,11 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    int lattePrice = 1;
+    int chocoPrice = 2;
     int CantidadDeCafe = 1;
     String clientName;
     boolean isLatte;
     boolean hasChoco;
+    int preciox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +28,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //construlle mensaje de orden y lo muestra
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     public void ingresarOrden(View view) {
-        int price = calculatePrice();
-        String precio = createOrderSumary(price);
+
+        if (hasChoco == true && isLatte == false) {
+            preciox = (CantidadDeCafe * 5)+ (chocoPrice * CantidadDeCafe) ;
+            Log.v("Precio Checker", "Preciox: " + preciox);
+        }
+        if (hasChoco == true && isLatte == true) {
+            preciox = (CantidadDeCafe * 5) + (chocoPrice * CantidadDeCafe) + (lattePrice * CantidadDeCafe);
+            Log.v("Precio Checker", "Preciox: " + preciox);
+        }
+        if (isLatte == true && hasChoco == false) {
+            preciox = (CantidadDeCafe * 5) + (lattePrice * CantidadDeCafe);
+            Log.v("Precio Checker", "Preciox: " + preciox);
+        } if(isLatte == false && hasChoco == false) {
+            preciox = CantidadDeCafe * 5;
+            Log.v("Precio Checker", "Precioxx: " + preciox);
+        }
+        String precio = createOrderSumary(preciox);
         displayMessage(precio);
         Log.v("MainActivity", "Nombre del Cliente: " + clientName);
     }
@@ -68,18 +85,15 @@ public class MainActivity extends AppCompatActivity {
         Log.v("Activity", "Sustrayendo Cafe, Total: " + CantidadDeCafe);
     }
 
-    private int calculatePrice() {
-        return CantidadDeCafe * 5;
 
-    }
 
     public String createOrderSumary(int precio) {
         EditText et = findViewById(R.id.edit_name_view);
         clientName = et.getText().toString();
         return clientName + "\n" + "Cantidad: "
                 + CantidadDeCafe + "\n Is Latte?"
-                + isLatte +  "\n Choco?" + hasChoco
-                +"\n" + "Total: $" + precio + "\n"
+                + isLatte + "\n Choco?" + hasChoco
+                + "\n" + "Total: $" + precio + "\n"
                 + "Muchas Graxiash";
     }
 
@@ -87,18 +101,20 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox = findViewById(R.id.late_checkbox);
         if (checkBox.isChecked() == true) {
             isLatte = true;
-        }else{
+        } else {
             isLatte = false;
         }
-       Log.v("MainActivity", "Latte checker is " + isLatte);
+        Log.v("MainActivity", "Latte checker is " + isLatte);
     }
-    public void chocolateCheck(View view){
-        CheckBox checkBox = findViewById(R.id.chocolate_checkbox);
-        if (checkBox.isChecked() == true) {
-            hasChoco= true;
-        }else{
+
+    public void chocolateCheck(View view) {
+        CheckBox checkBox1 = findViewById(R.id.chocolate_checkbox);
+        if (checkBox1.isChecked() == true) {
+            hasChoco = true;
+        } else {
             hasChoco = false;
         }
+        Log.v("MainActivity", "Choco checker is " + hasChoco);
     }
 
 
