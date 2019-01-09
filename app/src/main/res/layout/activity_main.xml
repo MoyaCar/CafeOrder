@@ -6,28 +6,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Menu"
-        android:textAllCaps="true"
-        android:textColor="@android:color/darker_gray"
-
-        />
 
     <EditText
         android:id="@+id/edit_name_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Write your name"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
+        android:hint="Write your name" />
 
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            style="@style/header_text_style_"
+            android:layout_margin="8dp"
+            android:text="Agregados" />
 
         <CheckBox
             android:id="@+id/late_checkbox"
@@ -67,59 +62,60 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:onClick="restar"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#795548"/>
 
 
         <TextView
-
             android:id="@+id/cantidad_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/header_text_style_"
             android:padding="8dp"
-            android:text="1"
-            android:textSize="16sp" />
+            android:text="1" />
 
         <Button
             android:layout_width="48dp"
             android:layout_height="48dp"
-
             android:onClick="sumar"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#795548"/>
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/header_text_style_"
         android:padding="8dp"
         android:text="Orden"
-        android:textAllCaps="true"
         android:textColor="@android:color/darker_gray" />
-
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="40dp">
     <TextView
         android:id="@+id/orden_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8sp"
-        android:text="$10"
-        android:textSize="16sp" />
-
+        style="@style/header_text_style_"
+        android:layout_marginLeft="8dp"
+        android:text="$10" />
+</ScrollView>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <Button
         android:id="@+id/order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:onClick="ingresarOrden"
-        android:text="order"
-        android:textAllCaps="true" />
+        android:text="ordenar"
+        android:textAllCaps="true"
+        android:textColor="#795548"/>
 
     <Button
         android:id="@+id/email_button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="mandar mail"
         android:onClick="mandarCorreoButton"
-        />
+        android:text="mandar mail"
+        android:textColor="#795548"/>
+</LinearLayout>
 
 </LinearLayout>
