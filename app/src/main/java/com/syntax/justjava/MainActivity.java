@@ -5,29 +5,36 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     int CantidadDeCafe = 1;
-    String clientName = "Lulo Esperon";
-
+    String clientName;
+    boolean isLatte;
+    boolean hasChoco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-//construlle mensaje de orden y lo muestra
+
+    //construlle mensaje de orden y lo muestra
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void ingresarOrden(View view) {
         int price = calculatePrice();
         String precio = createOrderSumary(price);
         displayMessage(precio);
+        Log.v("MainActivity", "Nombre del Cliente: " + clientName);
     }
 
-//muestra mensaje de orden en pantalla
+    //muestra mensaje de orden en pantalla
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void displayMessage(String string) {
         TextView priceTextView = (TextView) findViewById(R.id.orden_view);
@@ -49,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             CantidadDeCafe = CantidadDeCafe + 1;
             displayQuantity(CantidadDeCafe);
         }
+        Log.v("Activity", "Agregando Cafe, Total: " + CantidadDeCafe);
     }
 
     //Metodo para restar la cantidad de cafe
@@ -57,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             CantidadDeCafe = CantidadDeCafe - 1;
             displayQuantity(CantidadDeCafe);
         }
-
+        Log.v("Activity", "Sustrayendo Cafe, Total: " + CantidadDeCafe);
     }
 
     private int calculatePrice() {
@@ -66,6 +74,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String createOrderSumary(int precio) {
-        return clientName + "\n" + "Cantidad: " + CantidadDeCafe + "\n" + "Total: $" + precio + "\n" + "Muchas Graxiash";
+        EditText et = findViewById(R.id.edit_name_view);
+        clientName = et.getText().toString();
+        return clientName + "\n" + "Cantidad: "
+                + CantidadDeCafe + "\n Is Latte?"
+                + isLatte +  "\n Choco?" + hasChoco
+                +"\n" + "Total: $" + precio + "\n"
+                + "Muchas Graxiash";
     }
+
+    public void latteCheck(View view) {
+        CheckBox checkBox = findViewById(R.id.late_checkbox);
+        if (checkBox.isChecked() == true) {
+            isLatte = true;
+        }else{
+            isLatte = false;
+        }
+       Log.v("MainActivity", "Latte checker is " + isLatte);
+    }
+    public void chocolateCheck(View view){
+        CheckBox checkBox = findViewById(R.id.chocolate_checkbox);
+        if (checkBox.isChecked() == true) {
+            hasChoco= true;
+        }else{
+            hasChoco = false;
+        }
+    }
+
+
 }

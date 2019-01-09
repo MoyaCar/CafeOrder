@@ -9,6 +9,50 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Menu"
+        android:textAllCaps="true"
+        android:textColor="@android:color/darker_gray"
+
+        />
+
+    <EditText
+        android:id="@+id/edit_name_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your name"
+        android:layout_margin="8dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/late_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="latteCheck"
+            android:text="Latte"
+            android:textColor="@android:color/darker_gray" />
+
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="chocolateCheck"
+            android:text="Chocolate"
+            android:textColor="@android:color/darker_gray" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="Quantity"
         android:textAllCaps="true"
@@ -19,9 +63,9 @@
         android:layout_height="wrap_content">
 
         <Button
+            style=""
             android:layout_width="48dp"
             android:layout_height="48dp"
-    style=""
             android:onClick="restar"
             android:text="-" />
 
